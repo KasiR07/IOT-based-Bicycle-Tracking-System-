@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+        <head>
+            <meta charset="utf-8" />
+            <title>Real Time Data Display</title>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+              integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+              crossorigin=""/>
+              <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+              integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+              crossorigin=""></script>
+              <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+              <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+       
+                #map {
+                    width: 100%;
+                    height: 95vh;
+                }
+            </style>
+        </head>
+
+        <body>
+            <div id="map"></div>
+        </body>
+
+        <script >
+var hostname = "68.178.168.62";
+var port = 8083;
+var clientId = "123";
+clientId += new Date().getUTCMilliseconds();;
+var topic1 = "esp/temperature";
+var topic2 = "esp/humidity";
+var lat;
+var lng;
+
+var marker;
+    var map_init = L.map('map',{
+        center:[12.972, 79.16],
+        zoom:16
+    });
+    var osm =  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    }).addTo(map_init);
+
+
+mqttClient = new Paho.MQTT.Client(hostname, port, clientId);
+mqttClient.onMessageArrived = MessageArrived;
+mqttClient.onConnectionLost = ConnectionLost;
+setInterval(function () {
+      displayMarker();
+    }, 300);
+Connect();
+
+
+function displayMarker() {
+    if(marker) {
+            map_init.removeLayer(marker)
+        }
+    marker = L.marker([lat,lng])
+    var featureGroup = L.featureGroup([marker]).addTo(map_init)
+    map_init.fitBounds(featureGroup.getBounds())
+//    }, 2000);
+    console.log("lat = " + lat + "      lng =" + lng )  
+    }
+
+
+/Initiates a connection to the MQTT broker/
+function Connect(){
+    console.log("in connect");
+        mqttClient.connect({
+        useSSL:false,
+        onSuccess: Connected,
+        onFailure: ConnectionFailed,
+        keepAliveInterval: 10,
+});
+}
+
+/*Callback for successful MQTT connection */
+
+function Connected() {
+        console.log("Connected to broker");
+        mqttClient.subscribe(topic1);
+        mqttClient.subscribe(topic2);
+        console.log("helloooo", topic1, topic2);
+}
+
+/Callback for failed connection/
+function ConnectionFailed(res) {
+        console.log("Connect failed:" + res.errorMessage);
+}
+
+/Callback for lost connection/
+function ConnectionLost(res) {
+    console.log(res);
+        if (res.errorCode !== 0) {
+                console.log("Connection lost:" + res.errorMessage);
+                Connect();
+        }
+}
+
+/*Callback for incoming message processing */
+function MessageArrived(message) {
+    console.log("THERE", message);
+    if(message.destinationName=="esp/temperature"){
+        console.log(message.destinationName +" : " + message.payloadString);
+
+        lat=message.payloadString;
+        console.log(lat)}
+if(message.destinationName=="esp/humidity"){
+        console.log(message.destinationName +" : " + message.payloadString);
+
+        lng=message.payloadString;
+        console.log(lng)}
+}
+                </script>
+</html>
