@@ -49,6 +49,22 @@ Considering transportation has been the concern of every VITian due to the overc
 5. Wardens:- Wardens sit in hostel offices and travel almost the same distance as students.
 6. Day boarders:- They live outside the campus and can benefit more from our service.
 
+# Major Working Components
+Bicycles already present
+
+![image](https://github.com/KasiR07/IOT-based-Bicycle-Tracking-System-/assets/108777263/75ca52c3-37b0-497c-ac75-ccd468b7a55d)
+![image](https://github.com/KasiR07/IOT-based-Bicycle-Tracking-System-/assets/108777263/903363c4-1a9b-4c9b-8154-a65971fd568e)
+![image](https://github.com/KasiR07/IOT-based-Bicycle-Tracking-System-/assets/108777263/1e17387d-4f61-4efb-83f6-ecd704864cdf)
+![image](https://github.com/KasiR07/IOT-based-Bicycle-Tracking-System-/assets/108777263/ddac56cd-5cfb-42ce-9c5b-e4ac3c3b522c)
+
+Bicycle Stand Present
+
+![image](https://github.com/KasiR07/IOT-based-Bicycle-Tracking-System-/assets/108777263/4473d886-f6ad-474f-b78a-6bcd8194a204)
+![image](https://github.com/KasiR07/IOT-based-Bicycle-Tracking-System-/assets/108777263/046aad7c-2cd7-41d1-8a40-42c36a06df13)
+![image](https://github.com/KasiR07/IOT-based-Bicycle-Tracking-System-/assets/108777263/a185d764-d9d8-41ad-b9b0-48b9bb80aad2)
+![image](https://github.com/KasiR07/IOT-based-Bicycle-Tracking-System-/assets/108777263/ebd77edf-fa1f-4653-b8b4-a5d35bf7d6af)
+
+
 # Conclusion
 We have prepared an exhaustive business plan for our company considering various factors. We have financial planning and break-even analysis in place. We know about our market competitors. We have planned and decided on our go-to-market strategies and marketing strategies. Also, we have decided on our future products and services. All this planning and research shows that this business idea is feasible and has a great market for it. We will provide various plans or schemes to subscribe to our service through our website so that it is feasible for all kinds of customers. Cycles will be provided to the customers on demand. 
 
