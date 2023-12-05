@@ -49,5 +49,11 @@ Considering transportation has been the concern of every VITian due to the overc
 5. Wardens:- Wardens sit in hostel offices and travel almost the same distance as students.
 6. Day boarders:- They live outside the campus and can benefit more from our service.
 
+# Conclusion
+We have prepared an exhaustive business plan for our company considering various factors. We have financial planning and break-even analysis in place. We know about our market competitors. We have planned and decided on our go-to-market strategies and marketing strategies. Also, we have decided on our future products and services. All this planning and research shows that this business idea is feasible and has a great market for it. We will provide various plans or schemes to subscribe to our service through our website so that it is feasible for all kinds of customers. Cycles will be provided to the customers on demand. 
+
+# Future Scope
+Firstly, we will start with our college. But if we succeed in the future, we will extend this concept and also pursue it with other schools and colleges like SRM, Manipal, etc. These colleges are even more crowded than VIT. This can be applied in colleges and large societies where hundreds of people live in tall buildings. Parking is always a concern in such communities. Therefore, the best way to do this is to use the cycles to go to nearby places. Also including various other features like geo-tagging and other promising features will help us a lot in the future considering the technical advancements.
+
 # Video
 https://github.com/KasiR07/IOT-based-Bicycle-Tracking-System-/assets/108777263/0138fd44-9ab0-41fc-913d-727d92eb9c5d
